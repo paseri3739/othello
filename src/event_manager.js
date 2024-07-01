@@ -48,8 +48,7 @@ export class EventManager {
         currentPlayer.getDiskState()
       );
       if (allLegalCells.length !== 0) {
-        //対象のセルをハイライトする
-        $("#board td").removeClass(".black-highlight white-highlight");
+        self.board.renderer.clearHighlights();
         for (const cell of allLegalCells) {
           self.board.renderer.highlightCell(
             cell.row,
