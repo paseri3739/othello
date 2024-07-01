@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-min.js"></script>
+    <style>
+      .othello td {
+        width: 50px;
+        height: 50px;
+        background-color: greenyellow;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #000;
+      }
+      .othello .black {
+        background-color: black;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        margin: auto;
+      }
+      .othello .white {
+        background-color: white;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        margin: auto;
+      }
+      /* マウスオーバー時のハイライト */
+      .highlight {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.3
+        ) !important; /* 半透明の緑色でハイライト */
+      }
+      /* 半透明の黒丸と白丸 */
+      .black-highlight {
+        background-color: rgba(0, 0, 0, 0.5) !important;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        margin: auto;
+      }
+
+      .white-highlight {
+        background-color: rgba(255, 255, 255, 0.5) !important;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <table class="othello" id="board"></table>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
