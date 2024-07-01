@@ -66,6 +66,23 @@ export class Board {
   }
 
   /**
+   * すべての合法手座標を取得する。
+   * @param {number} playerDisk
+   * @returns {Array<{row: number, col: number}>} ひっくり返せるディスクの位置の配列。
+   */
+  getAllLegalMoves(playerDisk) {
+    const legalMoves = [];
+    for (let row = 0; row < 8; row++) {
+      for (let col = 0; col < 8; col++) {
+        if (this.isLegalMove(row, col, playerDisk)) {
+          legalMoves.push({ row, col });
+        }
+      }
+    }
+    return legalMoves;
+  }
+
+  /**
    * クリックされたセルのインデックスを取得する。
    * @param {JQuery} $cell
    * @returns {{row: number, col: number}}

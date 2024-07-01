@@ -26,6 +26,8 @@ export class Player {
 
   /**
    * 合法手かどうかを判定する。
+   * playerに実装するとboardの状態を知らなければならないためこの場合には不適切。
+   * boardに実装して移譲することでplayerはboardの状態を知らなくてもよくなる。
    * @param {number} row
    * @param {number} col
    * @returns {boolean} trueなら合法手。
@@ -36,6 +38,8 @@ export class Player {
 
   /**
    * 手を打つ。
+   * playerに実装するとboardの状態を知らなければならないためこの場合には不適切。
+   * boardに実装して移譲することでplayerはboardの状態を知らなくてもよくなる。
    * @param {number} row
    * @param {number} col
    */
