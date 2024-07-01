@@ -1,6 +1,7 @@
 "use strict";
 
 import { Board } from "./board.js";
+import { Player } from "./player.js";
 
 /**
  * イベントマネージャークラス。
@@ -9,7 +10,7 @@ export class EventManager {
   /**
    * コンストラクタ
    * @param {Board} board
-   * @param {Function} getCurrentPlayerCallback
+   * @param {() => Player} getCurrentPlayerCallback
    */
   constructor(board, getCurrentPlayerCallback) {
     this.board = board;

@@ -3,6 +3,7 @@ import { BoardRenderer } from "./board_renderer.js";
 import { Cell } from "./cell.js";
 import { Disk, DiskState } from "./disk.js";
 import { EventManager } from "./event_manager.js";
+import { Player } from "./player.js";
 import { RuleValidator } from "./rule_validator.js";
 
 /**
@@ -11,7 +12,7 @@ import { RuleValidator } from "./rule_validator.js";
 export class Board {
   /**
    * コンストラクタ
-   * @param {Function} getCurrentPlayerCallback
+   * @param {() => Player} getCurrentPlayerCallback
    * @param {Function} changePlayerCallback
    */
   constructor(getCurrentPlayerCallback, changePlayerCallback) {
