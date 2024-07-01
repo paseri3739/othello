@@ -13,6 +13,7 @@ export class EventManager {
    * @param {() => Player} getCurrentPlayerCallback
    */
   constructor(board, getCurrentPlayerCallback) {
+    /**@type {Board} */
     this.board = board;
     this.getCurrentPlayerCallback = getCurrentPlayerCallback;
     this.highlightedCell = { row: -1, col: -1 }; // 初期化
@@ -41,6 +42,23 @@ export class EventManager {
           currentPlayer.playMove(row, col);
         }
       });
+    $("#legal-move").on("click", function () {
+      const currentPlayer = self.getCurrentPlayerCallback();
+      const allLegalCells = self.board.getAllLegalMoves(
+        currentPlayer.getDiskState()
+      );
+      if (allLegalCells.length !== 0) {
+        //対象のセルをハイライトする
+        $("#board td").removeClass(".black-highlight white-highlight");
+        for (const cell of allLegalCells) {
+          self.board.renderer.highlightCell(
+            cell.row,
+            cell.col,
+            currentPlayer.getDiskState()
+          );
+        }
+      }
+    });
   }
 
   /**
